@@ -11,12 +11,11 @@ body {
     font-size:14px;
     font-size:1rem;
     font-family:'Apple SD Gothic Neo',NanumGothic,'Gulim','Malgun Gothic',Arial;
-    background-color: #f2f2f2;
 }
 
 /* top panel */
 #top-panel-container.hide-right {
-    right: -12em;
+    right: -13em;
 }
 
 #top-panel-container {
@@ -29,6 +28,7 @@ body {
 
 .top-panel #thumb {
     float: left;
+    margin-top: 0.7em;
 }
 
 /* clear both for row class */
@@ -38,16 +38,30 @@ body {
     clear: both;
 }
 
+.top-panel>div>#functions>.row {
+    border-bottom-style: solid;
+    border-bottom-color: #dddddd;
+    border-bottom-width: 1px;
+    margin-bottom: 0.6em;
+    padding-bottom: 0.3em;
+}
+
 .top-panel #functions {
     float: left;
     margin-left: 1em;
     width: 12em;
+    padding: 0.5em;
+    background-color: #fbfbfb;
 }
 
+.top-panel #bookmarks {
+    height: 6em;
+}
 .top-panel .function {
     float: left;
     margin-right: 0.2em;
     margin-bottom: 0.2em;
+    width: 32%;
 }
 
 .top-panel .function:last-child {
@@ -86,13 +100,29 @@ body {
 .toc-header {
     position: absolute;
     transform: rotate(-0.25turn);
+    transform-origin: left top;
     left: 1em;
-    top: 1em;
+    top: 10em;
+    width: 100%;
 }
 .toc-header > p {
-    font-size: 2em !important;
+    padding-top: 0.5em;
+    font-size: 1.4em !important;
     font-weight: bolder;
+    background-color: #9fa228;
 }
+
+.toc-header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20%;
+    width: 100%;
+    background-color: #7b7e2f;
+}
+
+/* Float menu */
 .toc-list-container {
     position: absolute;
     top: 0;

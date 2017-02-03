@@ -1,3 +1,5 @@
+var searchResult = [];
+
 function setTopPanelHandler() {
   var thumb    = document.getElementById("thumb");
   var fn_toc   = document.getElementById("fn_toc");
@@ -7,14 +9,13 @@ function setTopPanelHandler() {
 
   document.find_text.addEventListener("submit", function(e) {
     var searchText = document.find_text.search_text.value;
-    var result = Array.from($("section>section"))
+    searchResult = Array.from($("section>section"))
       .map(function(o,k) {
         return {section: k, text: $(o).text()};
       })
       .filter(function(o) {
         return RegExp(searchText, "i").test(o.text);
       });
-    console.log(result);
     e.preventDefault();
   });
   document.goto_page.addEventListener("submit", function(e) {
