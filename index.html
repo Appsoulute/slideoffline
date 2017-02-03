@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="css/revealadd.css">
 		<link rel="stylesheet" href="css/design/colorset.css">
 		<script src="./js/jquery-3.1.1.min.js"></script>
+		<script src="./js/amplify.store.min.js"></script>
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -91,26 +92,59 @@
 						<a href="#">⚙</a>
 					</div>
 					<div id="functions">
-						<div id="fn_toc" class="function">
-							<button>TOC</button>
+						<div class="row">
+							<div id="fn_toc" class="function">
+								<button>TOC</button>
+							</div>
+							<div id="fn_print" class="function">
+								<button>Print</button>
+							</div>
+							<div id="fn_doc" class="function">
+								<button>Doc</button>
+							</div>
 						</div>
-						<div id="fn_print" class="function">
-							<button>Print</button>
+						<div class="row">
+							<div id="fn_find" class="function">
+								<form action="#" name="find_text">
+									<label for="search_text">Find</label>
+									<input id="search_text" type="text" placeholder="enter some text to find..">
+									<button>find</button>
+									<button>↑</button>
+									<button>↓</button>
+								</form>
+							</div>
 						</div>
-						<div id="fn_goto" class="function">
-							<button>Goto</button>
+						<div class="row">
+							<div id="fn_goto" class="function">
+								<form action="#" name="goto_page">
+									<label for="goto_page">Page</label>
+									<input id="goto_page" type="text" placeholder="1" />
+										<button>Goto</button>
+								</form>
+							</div>
 						</div>
-						<div id="fn_note" class="function">
-							<button>Note</button>
+						<div class="row">
+							<div id="fn_bookmark" class="function">
+								<form action="#" name="add_bookmark">
+									<label for="button_bookmark_add">Bookmarks</label>
+									<button id="button_bookmark_add">add</button>
+								</form>
+							</div>
 						</div>
-						<div id="fn_1" class="function">
-							<button>Func1</button>
+						<div class="row">
+							<div class="function">empty</div>
+							<div class="function">empty</div>
+							<div class="function">empty</div>
 						</div>
-						<div id="fn_2" class="function">
-							<button>Func2</button>
+						<div class="row">
+							<div class="function">empty</div>
+							<div class="function">empty</div>
+							<div class="function">empty</div>
 						</div>
-						<div id="fn_3" class="function">
-							<button>Func3</button>
+					v	<div class="row">
+							<div class="function">empty</div>
+							<div class="function">empty</div>
+							<div class="function">empty</div>
 						</div>
 					</div>
 				</div>
