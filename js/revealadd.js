@@ -3,7 +3,26 @@ function setTopPanelHandler() {
   var fn_toc   = document.getElementById("fn_toc");
   var fn_print = document.getElementById("fn_print");
   var fn_goto  = document.getElementById("fn_goto");
-  var fn_note  = document.getElementById("fn_note");
+  var fn_doc  = document.getElementById("fn_doc");
+
+  document.find_text.addEventListener("submit", function(e) {
+    var searchText = document.find_text.search_text.value;
+    var result = Array.from($("section>section"))
+      .map(function(o,k) {
+        return {section: k, text: $(o).text()};
+      })
+      .filter(function(o) {
+        return RegExp(searchText, "i").test(o.text);
+      });
+    console.log(result);
+    e.preventDefault();
+  });
+  document.goto_page.addEventListener("submit", function(e) {
+    e.preventDefault();
+  });
+  document.add_bookmark.addEventListener("submit", function(e) {
+    e.preventDefault();
+  });
   thumb.addEventListener("click", function(e) {
     var topPanelContainer = document.getElementById("top-panel-container");
     var classList = topPanelContainer.classList;
@@ -14,7 +33,7 @@ function setTopPanelHandler() {
     }
     e.preventDefault();
   });
-  fn_note.addEventListener("click", function() {
+  fn_doc.addEventListener("click", function() {
     var slideDocContainer = document.getElementById("slide-doc-container");
     var classList = slideDocContainer.classList;
     if (classList.contains('hide-right')) {
