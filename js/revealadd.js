@@ -1,5 +1,5 @@
 var searchResult = [];
-
+var searchIdx = 0;
 function setTopPanelHandler() {
   var thumb    = document.getElementById("thumb");
   var fn_toc   = document.getElementById("fn_toc");
@@ -8,6 +8,7 @@ function setTopPanelHandler() {
   var fn_doc  = document.getElementById("fn_doc");
 
   document.find_text.addEventListener("submit", function(e) {
+    e.preventDefault();
     var searchText = document.find_text.search_text.value;
     searchResult = Array.from($("section>section"))
       .map(function(o,k) {
@@ -16,6 +17,24 @@ function setTopPanelHandler() {
       .filter(function(o) {
         return RegExp(searchText, "i").test(o.text);
       });
+    searchIdx = 0;
+    Reveal.navigateTo(0, searchResult[searchIdx].section);
+    return false;
+  });
+  document.getElementById("find_prev_button").addEventListener("click", function(e) {
+    if (searchResult.length>0) {
+      searchIdx--;
+      searchIdx = searchIdx < 0 ? searchResult.length-1 : searchIdx;
+      Reveal.navigateTo(0, searchResult[searchIdx].section);
+    }
+    e.preventDefault();
+  });
+  document.getElementById("find_next_button").addEventListener("click", function(e) {
+    if (searchResult.length>0) {
+      searchIdx++;
+      searchIdx = searchIdx > searchResult.length ? 0 : searchIdx;
+      Reveal.navigateTo(0, searchResult[searchIdx].section);
+    }
     e.preventDefault();
   });
   document.goto_page.addEventListener("submit", function(e) {
