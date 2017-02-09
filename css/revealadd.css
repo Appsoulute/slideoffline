@@ -10,12 +10,16 @@ a {
 body {
     font-size:14px;
     font-size:1rem;
-    font-family:'Apple SD Gothic Neo',NanumGothic,'Gulim','Malgun Gothic',Arial;
+    font-family:'Apple SD Gothic Neo', 'Malgun Gothic', "Segoe UI", Helvetica, Arial;
 }
 
 /* top panel */
 #top-panel-container.hide-right {
     right: -13em;
+}
+
+li {
+    line-height: 1.1em !important;
 }
 
 #top-panel-container {
